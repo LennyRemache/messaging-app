@@ -1,0 +1,37 @@
+.channel {
+  margin: 2px 5px;
+  color: grey;
+}
+
+.channel > h4 {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+
+.channel:hover > h4 {
+  color: white;
+  cursor: pointer;
+  background-color: #40464b;
+}
+
+.channel-hash {
+  font-size: larger;
+  margin-right: 5px;
+  padding: 5px 0px;
+}
+
+.sidebar-profile {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile-img {
+  font-size: larger;
+}
