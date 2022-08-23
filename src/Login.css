@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.login {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+
+  background-color: #363a3f;
+}
+
+.login > button {
+  background-color: #738adb;
+  color: white;
+  width: 200px;
+  font-weight: 800;
+}
+
+.login > button:hover {
+  background-color: #738adb75;
+}
+
+.app-logo {
+  max-width: 300px;
+  width: 100%;
+  object-fit: contain;
+}
