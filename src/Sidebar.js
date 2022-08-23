@@ -33,7 +33,7 @@ function Sidebar() {
       <div className="sidebar-profile">
         <Avatar />
         <div className="profile-info">
-          <h3>Lenny1x</h3>
+          <h4>Lenny1x</h4>
           <p>#1160</p>
         </div>
         <div className="profile-icons">

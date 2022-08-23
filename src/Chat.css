@@ -27,3 +27,23 @@
   border-radius: 9999px;
   background-color: rgb(35, 35, 35);
 }
+
+.chat-input > form {
+  display: flex;
+}
+
+#input-txt {
+  padding: 13px;
+  margin: 0px 10px 15px 10px;
+  border-radius: 7.5px;
+  color: lightgray;
+  outline: none;
+  border: none;
+  background-color: #474b53;
+  flex: 1;
+  font-size: medium;
+}
+
+.input-btn {
+  display: none;
+}

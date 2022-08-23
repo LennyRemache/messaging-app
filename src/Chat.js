@@ -25,7 +25,19 @@ function Chat() {
         <Message />
         <Message />
       </div>
-      <div className="chat-input">input</div>
+      <div className="chat-input">
+        <form>
+          <input
+            id="input-txt"
+            type="text"
+            placeholder="Message #Channel Name"
+            autoComplete="off"
+          />
+          <button className="input-btn" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
