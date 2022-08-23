@@ -9,8 +9,7 @@ function Message() {
       <div className="message-info">
         <div className="info">
           <h4>Lenny1x</h4>
-          <p className="message-date">08/22/2022</p>
-          <p className="message-time">10:49pm</p>
+          <p className="message-timestamp">08/22/2022 10:49pm</p>
         </div>
         <p className="message-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, cum
