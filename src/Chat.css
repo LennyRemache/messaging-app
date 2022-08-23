@@ -1,3 +1,17 @@
 .chat {
   flex: 0.75;
+  background-color: #363a3f;
+}
+
+.chat-header {
+  padding: 20px;
+  border-bottom: 3px solid #26282c;
+  color: gray;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid red;
 }

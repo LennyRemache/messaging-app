@@ -14,8 +14,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h3>Channel Name</h3>
-        <ExpandMoreIcon />
+        <h3>DevChat</h3>
       </div>
       <div className="sidebar-channels">
         <div className="channels-header">
@@ -34,7 +33,7 @@ function Sidebar() {
       <div className="sidebar-profile">
         <Avatar />
         <div className="profile-info">
-          <p>Lenny1x</p>
+          <h3>Lenny1x</h3>
           <p>#1160</p>
         </div>
         <div className="profile-icons">

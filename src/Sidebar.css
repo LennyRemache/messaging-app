@@ -17,6 +17,13 @@
 
 .sidebar-channels {
   flex: 1;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+.sidebar-channels::-webkit-scrollbar {
+  display: none;
 }
 
 .channels-header {
@@ -30,4 +37,27 @@
 .header {
   display: flex;
   align-items: center;
+}
+
+.sidebar-profile {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+  border-top: 1px solid grey;
+}
+
+.profile-info {
+  flex: 1;
+  padding: 5px 10px;
+}
+
+.profile-info > h3 {
+  color: white;
+}
+
+.profile-icons > .MuiSvgIcon-root {
+  padding: 1px;
+  margin: 4px;
 }

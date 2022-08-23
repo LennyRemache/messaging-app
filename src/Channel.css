@@ -1,5 +1,5 @@
 .channel {
-  margin: 2px 5px;
+  margin: 2px 7px;
   color: grey;
 }
 
@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
-  padding: 0px 10px;
+  padding: 0px 20px;
 }
 
 .channel:hover > h4 {
@@ -20,18 +20,4 @@
   font-size: larger;
   margin-right: 5px;
   padding: 5px 0px;
-}
-
-.sidebar-profile {
-  display: flex;
-  padding: 10px;
-  align-items: center;
-}
-
-.profile {
-  display: flex;
-}
-
-.profile-img {
-  font-size: larger;
 }
