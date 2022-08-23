@@ -17,13 +17,18 @@
 
 .sidebar-channels {
   flex: 1;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
 }
 
 .sidebar-channels::-webkit-scrollbar {
-  display: none;
+  width: 8.5px;
+}
+
+.sidebar-channels::-webkit-scrollbar-thumb {
+  border: 2.5px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: rgb(35, 35, 35);
 }
 
 .channels-header {

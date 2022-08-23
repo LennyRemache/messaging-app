@@ -37,8 +37,6 @@ function Sidebar() {
           <p>#1160</p>
         </div>
         <div className="profile-icons">
-          <MicIcon />
-          <HeadsetIcon />
           <SettingsIcon />
         </div>
       </div>

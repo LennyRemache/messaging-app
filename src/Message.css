@@ -1,0 +1,14 @@
+.message {
+  border: 0px solid blue;
+  padding: 15px 30px;
+  display: flex;
+}
+
+.message-info {
+  margin: 0px 0px 0px 15px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+}
