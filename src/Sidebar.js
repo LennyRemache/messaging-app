@@ -6,11 +6,17 @@ import AddIcon from "@mui/icons-material/Add";
 import Channel from "./Channel";
 
 import Avatar from "@mui/material/Avatar";
-import MicIcon from "@mui/icons-material/Mic";
-import HeadsetIcon from "@mui/icons-material/Headset";
+
 import SettingsIcon from "@mui/icons-material/Settings";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
+
+import { auth } from "./firebase";
 
 function Sidebar() {
+  // access data from redux global state
+  const user = useSelector(selectUser);
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -31,10 +37,10 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebar-profile">
-        <Avatar />
+        <Avatar onClick={() => auth.signOut()} src={user.photo} />
         <div className="profile-info">
-          <h4>Lenny1x</h4>
-          <p>#1160</p>
+          <h4>{user.displayName}</h4>
+          <p>#{user.uid.substr(0, 4)}</p>
         </div>
         <div className="profile-icons">
           <SettingsIcon />

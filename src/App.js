@@ -26,9 +26,12 @@ function App() {
             email: authUser.providerData[0].email,
           })
         );
+      } else {
+        // user is logged out
+        dispatch(logout());
       }
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="app">
