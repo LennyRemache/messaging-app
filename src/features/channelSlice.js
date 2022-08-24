@@ -8,7 +8,8 @@ export const channelSlice = createSlice({
   },
   reducer: {
     setChannelId: (state, action) => {
-      state.value += action.payload;
+      state.channelId = action.payload.channelId;
+      state.channelName = action.payload.channelName;
     },
   },
 });

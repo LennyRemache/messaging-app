@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -11,11 +11,36 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 
-import { auth } from "./firebase";
+import db, { auth } from "./firebase";
+import { collection } from "firebase/firestore";
 
 function Sidebar() {
-  // access data from redux global state
+  // selector is used access data from redux global state
   const user = useSelector(selectUser);
+
+  const [channels, setChannels] = useState([]);
+
+  useEffect(() => {
+    const channeldb = collection(db, "channels");
+    channeldb.onSnapshot((snapshot) =>
+      setChannels(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          channel: doc.data(),
+        }))
+      )
+    );
+  }, []);
+
+  function addChannel() {
+    const channelName = prompt("Enter new channel name");
+
+    if (channelName) {
+      collection(db, "channels").add({
+        channelName: channelName,
+      });
+    }
+  }
 
   return (
     <div className="sidebar">
@@ -28,12 +53,12 @@ function Sidebar() {
             <ExpandMoreIcon />
             <h4>Text Channels</h4>
           </div>
-          <AddIcon className="channels-addChannel" />
+          <AddIcon className="channels-addChannel" onClick={addChannel} />
         </div>
         <div className="channels-list">
-          <Channel />
-          <Channel />
-          <Channel />
+          {channels.map((channel) => {
+            return <Channel key={channel.id} channel={channel.channelName} />;
+          })}
         </div>
       </div>
       <div className="sidebar-profile">

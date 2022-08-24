@@ -6,7 +6,7 @@ function Channel({ id, channel }) {
     <div className="channel">
       <h4>
         <span className="channel-hash">#</span>
-        ChannelName
+        {channel}
       </h4>
     </div>
   );

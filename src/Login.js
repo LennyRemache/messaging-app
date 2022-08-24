@@ -3,7 +3,6 @@ import React from "react";
 import "./Login.css";
 import { auth, provider } from "./firebase";
 import { signInWithPopup } from "firebase/auth";
-import db from "./firebase";
 
 function Login() {
   function signIn() {
