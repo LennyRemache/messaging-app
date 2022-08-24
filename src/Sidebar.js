@@ -12,7 +12,13 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 
 import db, { auth } from "./firebase";
-import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 function Sidebar() {
   // selector is used access data from redux global state
@@ -22,6 +28,7 @@ function Sidebar() {
 
   useEffect(() => {
     const channeldb = collection(db, "channels");
+
     // if the channels db ever changes, update the state
     onSnapshot(channeldb, (snapshot) =>
       setChannels(

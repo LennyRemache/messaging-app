@@ -6,15 +6,15 @@ export const channelSlice = createSlice({
     channelId: null,
     channelName: null,
   },
-  reducer: {
-    setChannelId: (state, action) => {
+  reducers: {
+    setChannelInfo: (state, action) => {
       state.channelId = action.payload.channelId;
       state.channelName = action.payload.channelName;
     },
   },
 });
 
-export const { setChannelId } = channelSlice.actions;
+export const { setChannelInfo } = channelSlice.actions;
 
 export const selectChannelId = (state) => state.channel.channelId;
 export const selectChannelName = (state) => state.channel.channelName;
