@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 
 import db, { auth } from "./firebase";
-import { collection } from "firebase/firestore";
+import { addDoc, collection, onSnapshot } from "firebase/firestore";
 
 function Sidebar() {
   // selector is used access data from redux global state
@@ -22,7 +22,8 @@ function Sidebar() {
 
   useEffect(() => {
     const channeldb = collection(db, "channels");
-    channeldb.onSnapshot((snapshot) =>
+    // if the channels db ever changes, update the state
+    onSnapshot(channeldb, (snapshot) =>
       setChannels(
         snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -32,13 +33,14 @@ function Sidebar() {
     );
   }, []);
 
+  console.log(channels);
+
   function addChannel() {
     const channelName = prompt("Enter new channel name");
 
     if (channelName) {
-      collection(db, "channels").add({
-        channelName: channelName,
-      });
+      const channeldb = collection(db, "channels");
+      addDoc(channeldb, { channelName: channelName });
     }
   }
 
@@ -57,7 +59,14 @@ function Sidebar() {
         </div>
         <div className="channels-list">
           {channels.map((channel) => {
-            return <Channel key={channel.id} channel={channel.channelName} />;
+            console.log(channel);
+            return (
+              <Channel
+                key={channel.id}
+                id={channel.id}
+                channelName={channel.channel.channelName}
+              />
+            );
           })}
         </div>
       </div>
