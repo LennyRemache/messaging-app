@@ -28,7 +28,9 @@ function Chat() {
     if (channelId) {
       const channel = collection(db, `channels/${channelId}/messages`);
 
-      onSnapshot(channel, (snapshot) => {
+      const q = query(channel, orderBy("timestamp", "asc"));
+
+      onSnapshot(q, (snapshot) => {
         setMessages(snapshot.docs.map((doc) => doc.data()));
       });
     }
