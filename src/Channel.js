@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import "./Channel.css";
 import { setChannelInfo } from "./features/channelSlice";

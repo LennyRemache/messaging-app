@@ -18,6 +18,7 @@ import {
   onSnapshot,
   query,
   orderBy,
+  serverTimestamp,
 } from "firebase/firestore";
 
 function Sidebar() {
@@ -29,8 +30,9 @@ function Sidebar() {
   useEffect(() => {
     const channeldb = collection(db, "channels");
 
+    const q = query(channeldb, orderBy("timestamp", "asc"));
     // if the channels db ever changes, update the state
-    onSnapshot(channeldb, (snapshot) =>
+    onSnapshot(q, (snapshot) =>
       setChannels(
         snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -45,7 +47,11 @@ function Sidebar() {
 
     if (channelName) {
       const channeldb = collection(db, "channels");
-      addDoc(channeldb, { channelName: channelName });
+
+      addDoc(channeldb, {
+        channelName: channelName,
+        timestamp: serverTimestamp(),
+      });
     }
   }
 

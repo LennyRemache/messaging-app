@@ -1,7 +1,6 @@
 import React from "react";
 import "./Message.css";
 import Avatar from "@mui/material/Avatar";
-import { Timestamp } from "firebase/firestore";
 
 function Message({ user, message, timestamp }) {
   return (
