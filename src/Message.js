@@ -5,7 +5,7 @@ import Avatar from "@mui/material/Avatar";
 function Message({ user, message, timestamp }) {
   return (
     <div className="message">
-      <Avatar />
+      <Avatar src={user.photoURL} />
       <div className="message-info">
         <div className="info">
           <h4>{user.displayName}</h4>

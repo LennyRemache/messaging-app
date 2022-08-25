@@ -12,3 +12,13 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.message-text {
+  color: white;
+  margin-top: 5px;
+}
+
+.message-timestamp {
+  margin: auto auto auto 20px;
+  font-size: x-small;
+}
