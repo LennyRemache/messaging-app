@@ -40,8 +40,6 @@ function Sidebar() {
     );
   }, []);
 
-  console.log(channels);
-
   function addChannel() {
     const channelName = prompt("Enter new channel name");
 
@@ -66,7 +64,7 @@ function Sidebar() {
         </div>
         <div className="channels-list">
           {channels.map((channel) => {
-            console.log(channel);
+            //console.log(channel);
             return (
               <Channel
                 key={channel.id}

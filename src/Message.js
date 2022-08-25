@@ -1,20 +1,20 @@
 import React from "react";
 import "./Message.css";
 import Avatar from "@mui/material/Avatar";
+import { Timestamp } from "firebase/firestore";
 
-function Message() {
+function Message({ user, message, timestamp }) {
   return (
     <div className="message">
       <Avatar />
       <div className="message-info">
         <div className="info">
-          <h4>Lenny1x</h4>
-          <p className="message-timestamp">08/22/2022 10:49pm</p>
+          <h4>{user.displayName}</h4>
+          <p className="message-timestamp">
+            {timestamp?.toDate().toUTCString()}
+          </p>
         </div>
-        <p className="message-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, cum
-          assumenda ipsam eveni
-        </p>
+        <p className="message-text">{message}</p>
       </div>
     </div>
   );
