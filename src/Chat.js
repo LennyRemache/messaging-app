@@ -35,15 +35,14 @@ function Chat() {
     }
   }, [channelId]);
 
-  // fixes safari preventDefault()
-
-  document.addEventListener(
-    "touchstart",
-    function (e) {
-      e.preventDefault();
-    },
-    { passive: false }
-  );
+  function sendMessage(e) {
+    document.addEventListener(
+      "touchstart",
+      function (e) {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
 
     const channel = collection(db, `channels/${channelId}/messages`);
     addDoc(channel, {
