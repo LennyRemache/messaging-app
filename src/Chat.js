@@ -35,8 +35,15 @@ function Chat() {
     }
   }, [channelId]);
 
-  const sendMessage = (e) => {
-    e.preventDefault();
+  // fixes safari preventDefault()
+
+  document.addEventListener(
+    "touchstart",
+    function (e) {
+      e.preventDefault();
+    },
+    { passive: false }
+  );
 
     const channel = collection(db, `channels/${channelId}/messages`);
     addDoc(channel, {
@@ -46,7 +53,7 @@ function Chat() {
     });
 
     setInput("");
-  };
+  }
 
   return (
     <div className="chat">
@@ -70,7 +77,11 @@ function Chat() {
             onChange={(e) => setInput(e.target.value)}
             disabled={!channelId}
           />
-          <button className="input-btn" type="submit" onClick={sendMessage}>
+          <button
+            className="input-btn"
+            type="submit"
+            onClick={(e) => sendMessage(e)}
+          >
             Submit
           </button>
         </form>
