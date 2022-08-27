@@ -36,13 +36,7 @@ function Chat() {
   }, [channelId]);
 
   function sendMessage(e) {
-    document.addEventListener(
-      "touchstart",
-      function (e) {
-        e.preventDefault();
-      },
-      { passive: false }
-    );
+    e.preventDefault();
 
     const channel = collection(db, `channels/${channelId}/messages`);
     addDoc(channel, {
